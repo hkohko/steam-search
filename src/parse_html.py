@@ -97,10 +97,9 @@ async def main(search: str):
 
     container_page, product_info = await main_info(main_search_page)
     prices_data, price_type = await prices(container_page)
-    print(product_info)
-    print(prices_data)
+    return {"info": product_info, "price": prices_data, "price_type": price_type}
 
 
 if __name__ == "__main__":
     with asyncio.Runner() as runner:
-        runner.run(main("tekken 8"))
+        runner.run(main("don't starve together"))
